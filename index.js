@@ -5,6 +5,7 @@ const axios = require("axios");
 const app = express();
 
 const port = 4000;
+
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
@@ -13,6 +14,9 @@ app.get("/", (req, res) => {
 
 app.get("/api/rates", (req, res) => {
   const base = req.query.base;
+
+  // here i handled an error breaking my app when a user enters only one currency and currency.split fails.
+  // using conditional statement to split only if there is a comma in the query parameter
   const currency = req.query.currency.includes(",")
     ? Array.from(req.query.currency.split(","))
     : req.query.currency;
