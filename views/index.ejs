@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+
+    <h1>Enye Backend test</h1>
+
+    <ul>
+        <li>
+            <h3>use the input boxes to check the rates of currencies against another</h3>
+        </li>
+        <li>
+            <h3>if you want to check multiples currencies seperate them with comma " , "</h3>
+        </li>
+        <li>
+            <h3>sample currencies you could use include USD CAD GBP</h3>
+        </li>
+        <li>
+            <h3>if you are testing with postman or using the adress bar your request should be in this format <br>
+                http://localhost:4000/api/rates?base=GBP&currency=USD,CAD </h3>
+        </li>
+    </ul>
+
+    <form action="/api/rates" method="get">
+        <input type="text" name="base" id="" placeholder="enter base currency">
+        <input type="text" name="currency" id="" placeholder="enter other currencies to compare">
+        <input type="submit" value="Get Rates">
+    </form>
+
+</body>
+
+</html>
