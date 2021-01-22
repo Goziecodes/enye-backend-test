@@ -52,6 +52,6 @@ app.get("/api/rates", (req, res) => {
     });
 });
 
-app.listen(port, () => {
+app.listen(process.env.port || port, () => {
   console.log(`app is listening on port ${port}`);
 });
